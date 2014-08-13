@@ -112,6 +112,7 @@ window.requestAnimationFrame = function(cb, element){
 window.cancelAnimationFrame = function (id) {
 	return ej.clearTimeout(id);
 };
+window.WebGLRenderingContext = function(){};
 
 
 // The native Image, Audio, HttpRequest and LocalStorage class mimic the real elements
