@@ -81,6 +81,7 @@ window.console.info =  function () { window.console._log('INFO', arguments); };
 window.console.warn =  function () { window.console._log('WARN', arguments); };
 window.console.error = function () { window.console._log('ERROR', arguments); };
 //window.console.log =   function () { window.console._log('LOG', arguments); };
+window.console.dir = window.console.log;
 
 var consoleTimers = {};
 console.time = function(name) {
@@ -115,7 +116,10 @@ window.require = function( name ) {
 };
 
 // Timers
-window.performance = {now: function() {return ej.performanceNow();} };
+window.performance = {
+    now: function() {return ej.performanceNow();},
+    timing: Date.now()
+};
 window.setTimeout = function(cb, t){ return ej.setTimeout(cb, t||0); };
 window.setInterval = function(cb, t){ return ej.setInterval(cb, t||0); };
 window.clearTimeout = function(id){ return ej.clearTimeout(id); };
